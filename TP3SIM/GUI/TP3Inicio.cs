@@ -17,6 +17,7 @@ namespace WindowsFormsApplication1
         int distribucion_seleccionada = 0;
         int n;
         double[] numeros;
+        int intervalos;
 
         public TP3()
         {
@@ -57,7 +58,25 @@ namespace WindowsFormsApplication1
             dt.Columns.Add("PeAc");
             dt.Columns.Add("PoAc-PeAc");
 
-            int intervalos = Convert.ToInt32(txt_intervalos.Text);
+            if (rb_5.Checked)
+            {
+                intervalos = 5;
+                rb_10.Enabled = false;
+                rb_20.Enabled = false;
+            }
+            else if (rb_10.Checked)
+            {
+                intervalos = 10;
+                rb_20.Enabled = false;
+                rb_5.Enabled = false;
+            }
+            else
+            {
+                intervalos = 20;
+                rb_10.Enabled = false;
+                rb_5.Enabled = false;
+            }
+                
             double min = numeros[0];
             double max = numeros[0];
             double intSig = 0;
@@ -268,6 +287,11 @@ namespace WindowsFormsApplication1
             txt_max.Text = "";
             txt_media.Text = "";
             txt_desv.Text = "";
+        }
+
+        private void txt_intervalos_TextChanged(object sender, EventArgs e)
+        {
+
         }
         
     }

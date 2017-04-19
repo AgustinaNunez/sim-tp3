@@ -52,12 +52,14 @@
             this.valoresGenerados = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dgv_frec = new System.Windows.Forms.DataGridView();
             this.lbl_resultadoPrueba = new System.Windows.Forms.Label();
-            this.txt_intervalos = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.chrt_histograma = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_confianza = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.rb_5 = new System.Windows.Forms.RadioButton();
+            this.rb_10 = new System.Windows.Forms.RadioButton();
+            this.rb_20 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_frec)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chrt_histograma)).BeginInit();
@@ -268,15 +270,6 @@
             this.lbl_resultadoPrueba.TabIndex = 8;
             this.lbl_resultadoPrueba.Text = "lbl_resultadoPrueba";
             // 
-            // txt_intervalos
-            // 
-            this.txt_intervalos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_intervalos.Location = new System.Drawing.Point(19, 60);
-            this.txt_intervalos.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_intervalos.Name = "txt_intervalos";
-            this.txt_intervalos.Size = new System.Drawing.Size(126, 25);
-            this.txt_intervalos.TabIndex = 0;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -306,9 +299,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.rb_20);
+            this.groupBox2.Controls.Add(this.rb_10);
+            this.groupBox2.Controls.Add(this.rb_5);
             this.groupBox2.Controls.Add(this.txt_confianza);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txt_intervalos);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(259, 65);
@@ -321,21 +316,54 @@
             // txt_confianza
             // 
             this.txt_confianza.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_confianza.Location = new System.Drawing.Point(19, 125);
+            this.txt_confianza.Location = new System.Drawing.Point(137, 151);
             this.txt_confianza.Name = "txt_confianza";
-            this.txt_confianza.Size = new System.Drawing.Size(126, 25);
+            this.txt_confianza.Size = new System.Drawing.Size(63, 25);
             this.txt_confianza.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 100);
+            this.label4.Location = new System.Drawing.Point(16, 154);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Nivel de confianza";
+            // 
+            // rb_5
+            // 
+            this.rb_5.AutoSize = true;
+            this.rb_5.Location = new System.Drawing.Point(98, 69);
+            this.rb_5.Name = "rb_5";
+            this.rb_5.Size = new System.Drawing.Size(33, 21);
+            this.rb_5.TabIndex = 4;
+            this.rb_5.TabStop = true;
+            this.rb_5.Text = "5";
+            this.rb_5.UseVisualStyleBackColor = true;
+            // 
+            // rb_10
+            // 
+            this.rb_10.AutoSize = true;
+            this.rb_10.Location = new System.Drawing.Point(98, 96);
+            this.rb_10.Name = "rb_10";
+            this.rb_10.Size = new System.Drawing.Size(40, 21);
+            this.rb_10.TabIndex = 5;
+            this.rb_10.TabStop = true;
+            this.rb_10.Text = "10";
+            this.rb_10.UseVisualStyleBackColor = true;
+            // 
+            // rb_20
+            // 
+            this.rb_20.AutoSize = true;
+            this.rb_20.Location = new System.Drawing.Point(98, 123);
+            this.rb_20.Name = "rb_20";
+            this.rb_20.Size = new System.Drawing.Size(40, 21);
+            this.rb_20.TabIndex = 6;
+            this.rb_20.TabStop = true;
+            this.rb_20.Text = "20";
+            this.rb_20.UseVisualStyleBackColor = true;
             // 
             // TP3
             // 
@@ -391,13 +419,15 @@
         private System.Windows.Forms.ListView lst_distrib;
         private System.Windows.Forms.DataGridView dgv_frec;
         private System.Windows.Forms.Label lbl_resultadoPrueba;
-        private System.Windows.Forms.TextBox txt_intervalos;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chrt_histograma;
         private System.Windows.Forms.ColumnHeader valoresGenerados;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txt_confianza;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RadioButton rb_20;
+        private System.Windows.Forms.RadioButton rb_10;
+        private System.Windows.Forms.RadioButton rb_5;
     }
 }
 
