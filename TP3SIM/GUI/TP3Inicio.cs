@@ -44,17 +44,18 @@ namespace WindowsFormsApplication1
 
         public void generar_tablas()
         {
-            DataTable dt_frec = new DataTable();
-            dt_frec.Columns.Add("Mín");
-            dt_frec.Columns.Add("Máx");
-            dt_frec.Columns.Add("Marca Clase");
-            dt_frec.Columns.Add("Fo");
-            dt_frec.Columns.Add("Po");
-            dt_frec.Columns.Add("Fe");
-            dt_frec.Columns.Add("Pe");
-            dt_frec.Columns.Add("PeAc");
-            dt_frec.Columns.Add("PoAc");
-            dt_frec.Columns.Add("PeAc-PoAc");
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Mín");
+            dt.Columns.Add("Máx");
+            dt.Columns.Add("Marca Clase");
+            dt.Columns.Add("Fo");
+            dt.Columns.Add("P()");
+            dt.Columns.Add("Fe");
+            dt.Columns.Add("Po");
+            dt.Columns.Add("Pe");
+            dt.Columns.Add("PoAc");
+            dt.Columns.Add("PeAc");
+            dt.Columns.Add("PoAc-PeAc");
 
             int intervalos = Convert.ToInt32(txt_intervalos.Text);
             double min = numeros[0];
@@ -63,8 +64,14 @@ namespace WindowsFormsApplication1
             int frec = 0;
             double marcaClase = 0;
             double j = 0;
+
             double prob;
             double fe = 0;
+            double po = 0;
+            double pe = 0;
+            double poAc = 0;
+            double peAc = 0;
+            double abs = 0;
 
             // armar intervalos
             for (int i = 0; i < n; i++)
@@ -87,27 +94,36 @@ namespace WindowsFormsApplication1
                 for (int i = 0; i < n; i++)
                 {
                     frec = frec + 1;
-                    //frec++;
                 }
 
                 prob = (1 / (1 * Math.Sqrt((2 * (Math.PI))))) * Math.Exp(-0.5 * (marcaClase * marcaClase));
-                fe = prob * n;
+                fe = prob * (double) n;
+                po = (double) frec / (double) n;
+                pe = fe / n;
+                poAc = poAc + po;
+                peAc = peAc + pe;
+                abs = poAc - peAc;
+                Math.Abs(abs);
 
-                DataRow dr = dt_frec.NewRow();
+                DataRow dr = dt.NewRow();
                 dr["Mín"] = j;
                 dr["Máx"] = intSig;
                 dr["Marca Clase"] = marcaClase;
-                dr["Fo"] = frec;
-                dr["Po"] = prob;
+                dr["P()"] = prob;
                 dr["Fe"] = fe;
+                dr["Po"] = po;
+                dr["Pe"] = pe;
+                dr["PoAc"] = poAc;
+                dr["PeAc"] = peAc;
+                dr["PoAc-PeAc"] = abs;
 
-                dt_frec.Rows.Add(dr);
+                dt.Rows.Add(dr);
 
                 frec = 0;
                 prob = 0;
             }           
 
-            dgv_frec.DataSource = dt_frec;
+            dgv_frec.DataSource = dt;
         }
 
         public double[] generarValores()

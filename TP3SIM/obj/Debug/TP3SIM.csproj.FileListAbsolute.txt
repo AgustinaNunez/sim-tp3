@@ -28,15 +28,11 @@ D:\Agus\Agus Drive\Académico\4° AÑO\SIM\SIM_TP3\SIM_TP3\TP3SIM\bin\Debug\TP3S
 D:\Agus\Agus Drive\Académico\4° AÑO\SIM\SIM_TP3\SIM_TP3\TP3SIM\bin\Debug\TP3SIM.exe
 D:\Agus\Agus Drive\Académico\4° AÑO\SIM\SIM_TP3\SIM_TP3\TP3SIM\bin\Debug\TP3SIM.pdb
 D:\Agus\Agus Drive\Académico\4° AÑO\SIM\SIM_TP3\SIM_TP3\TP3SIM\obj\Debug\TP3SIM.csprojResolveAssemblyReference.cache
-D:\Agus\Agus Drive\Académico\4° AÑO\SIM\SIM_TP3\SIM_TP3\TP3SIM\obj\Debug\WindowsFormsApplication1.Normal.resources
 D:\Agus\Agus Drive\Académico\4° AÑO\SIM\SIM_TP3\SIM_TP3\TP3SIM\obj\Debug\WindowsFormsApplication1.TP3.resources
 D:\Agus\Agus Drive\Académico\4° AÑO\SIM\SIM_TP3\SIM_TP3\TP3SIM\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 D:\Agus\Agus Drive\Académico\4° AÑO\SIM\SIM_TP3\SIM_TP3\TP3SIM\obj\Debug\TP3SIM.csproj.GenerateResource.Cache
 D:\Agus\Agus Drive\Académico\4° AÑO\SIM\SIM_TP3\SIM_TP3\TP3SIM\obj\Debug\TP3SIM.exe
 D:\Agus\Agus Drive\Académico\4° AÑO\SIM\SIM_TP3\SIM_TP3\TP3SIM\obj\Debug\TP3SIM.pdb
-D:\Agus\Agus Drive\Académico\4° AÑO\SIM\SIM_TP3\SIM_TP3\TP3SIM\obj\Debug\WindowsFormsApplication1._Exponencial.resources
-D:\Agus\Agus Drive\Académico\4° AÑO\SIM\SIM_TP3\SIM_TP3\TP3SIM\obj\Debug\WindowsFormsApplication1._Poisson.resources
-D:\Agus\Agus Drive\Académico\4° AÑO\SIM\SIM_TP3\SIM_TP3\TP3SIM\obj\Debug\WindowsFormsApplication1._Uniforme.resources
 C:\Users\Agustina\Desktop\POSTA\SIM_TP3\TP3SIM\bin\Debug\TP3SIM.exe.config
 C:\Users\Agustina\Desktop\POSTA\SIM_TP3\TP3SIM\bin\Debug\TP3SIM.exe
 C:\Users\Agustina\Desktop\POSTA\SIM_TP3\TP3SIM\bin\Debug\TP3SIM.pdb
