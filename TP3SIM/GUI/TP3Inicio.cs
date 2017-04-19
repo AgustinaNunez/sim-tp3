@@ -105,10 +105,16 @@ namespace WindowsFormsApplication1
                 abs = poAc - peAc;
                 Math.Abs(abs);
 
+                //chart1.Titles.Add("Frecuencia Observada");
+
+                chrt_histograma.Series["Series1"].Points.AddXY((j + (cteIntervalo / 2)), frec);
+                  
+                // agus
                 DataRow dr = dt.NewRow();
                 dr["Mín"] = j;
                 dr["Máx"] = intSig;
                 dr["Marca Clase"] = marcaClase;
+                dr["Fo"] = frec;
                 dr["P()"] = prob;
                 dr["Fe"] = fe;
                 dr["Po"] = po;
@@ -116,6 +122,10 @@ namespace WindowsFormsApplication1
                 dr["PoAc"] = poAc;
                 dr["PeAc"] = peAc;
                 dr["PoAc-PeAc"] = abs;
+
+           
+
+
 
                 dt.Rows.Add(dr);
 
@@ -131,6 +141,7 @@ namespace WindowsFormsApplication1
             //Creo el objeto de la clase Random 
             Random RND = new Random();
             n = Convert.ToInt32(txt_n.Text);
+            
 
             //Creamos un array que va a contener cantidad aleatoria de numeros que ingresamos por el texbox
             numeros = new double[n];
@@ -167,10 +178,10 @@ namespace WindowsFormsApplication1
                 case (int) tipo_distribucion.Normal:
                     media = Convert.ToDouble(txt_media.Text);
                     desv = Convert.ToDouble(txt_desv.Text);
-                    for (int i = 0; i < n/2; i++)
+                    for (int i = 0; i < n; i++)         //for (int i = 0; i < n/2; i++)----> por que divido 2 
                     {
-                        //numeros[i] = Distribucion.generarNormal(media, desv);
-                        //lst_distrib.Items.Add(numeros[i].ToString());
+                        numeros = Distribucion.generarNormal(n, media, desv);
+                        lst_distrib.Items.Add(numeros[i].ToString());
                     }
                     break;
             }                            
@@ -269,6 +280,10 @@ namespace WindowsFormsApplication1
             txt_media.Text = "";
             txt_desv.Text = "";
         }
+
+
+
+
         
     }
 }
