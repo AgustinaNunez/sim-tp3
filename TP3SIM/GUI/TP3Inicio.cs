@@ -33,8 +33,9 @@ namespace WindowsFormsApplication1
                 
         public void btn_generar_Click(object sender, EventArgs e)
         {
+            //generar valores carga el array numeros con la distribucion elegida en el combo box
             generarValores();
-            graficarHistograma();
+            
             if (cbo_distrib.SelectedIndex == 0)
             {
                 generar_tabla_distribucion_Uniforme();
@@ -46,10 +47,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        public void graficarHistograma()
-        {
-
-        }
+       
 
         public void generar_tabla_distribucion_Uniforme()
         {
@@ -231,8 +229,8 @@ namespace WindowsFormsApplication1
                     frec = frec + 1;
                 }
 
-                prob = (1 / (1 * Math.Sqrt((2 * (Math.PI))))) * Math.Exp(-0.5 * (marcaClase * marcaClase));
-                
+                //prob = (1 / (1 * Math.Sqrt((2 * (Math.PI))))) * Math.Exp(-0.5 * (marcaClase * marcaClase));
+                prob = 0;
                 
                 fe = prob * (double)n;
                 po = (double) frec / (double) n;

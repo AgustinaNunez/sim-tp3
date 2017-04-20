@@ -63,3 +63,12 @@ C:\Users\garba\Desktop\REPO-TP3-SIM\sim-tp3\TP3SIM\obj\Debug\WindowsFormsApplica
 C:\Users\garba\Desktop\REPO-TP3-SIM\sim-tp3\TP3SIM\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\garba\Desktop\REPO-TP3-SIM\sim-tp3\TP3SIM\obj\Debug\TP3SIM.csproj.GenerateResource.Cache
 >>>>>>> 57a43f8da640619110a7a6e95d1d1a9b2c9a0695
+C:\Users\Javier\Source\Repos\sim-tp3--local3\TP3SIM\bin\Debug\TP3SIM.exe.config
+C:\Users\Javier\Source\Repos\sim-tp3--local3\TP3SIM\bin\Debug\TP3SIM.exe
+C:\Users\Javier\Source\Repos\sim-tp3--local3\TP3SIM\bin\Debug\TP3SIM.pdb
+C:\Users\Javier\Source\Repos\sim-tp3--local3\TP3SIM\obj\Debug\TP3SIM.csprojResolveAssemblyReference.cache
+C:\Users\Javier\Source\Repos\sim-tp3--local3\TP3SIM\obj\Debug\WindowsFormsApplication1.TP3.resources
+C:\Users\Javier\Source\Repos\sim-tp3--local3\TP3SIM\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Javier\Source\Repos\sim-tp3--local3\TP3SIM\obj\Debug\TP3SIM.csproj.GenerateResource.Cache
+C:\Users\Javier\Source\Repos\sim-tp3--local3\TP3SIM\obj\Debug\TP3SIM.exe
+C:\Users\Javier\Source\Repos\sim-tp3--local3\TP3SIM\obj\Debug\TP3SIM.pdb
