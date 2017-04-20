@@ -116,6 +116,7 @@ namespace WindowsFormsApplication1
                 }
 
                 prob = (1 / (1 * Math.Sqrt((2 * (Math.PI))))) * Math.Exp(-0.5 * (marcaClase * marcaClase));
+                frec = n / intervalos;
                 fe = prob * (double) n;
                 po = (double) frec / (double) n;
                 pe = fe / n;
@@ -126,16 +127,16 @@ namespace WindowsFormsApplication1
 
                 //chart1.Titles.Add("Frecuencia Observada");
 
-                chrt_histograma.Series["Series1"].Points.AddXY((j + (cteIntervalo / 2)), frec);
+                chrt_histograma.Series["Series1"].Points.AddXY((j + (cteIntervalo / 2)), fe);
                   
                 // agus
                 DataRow dr = dt.NewRow();
                 dr["Mín"] = j;
                 dr["Máx"] = intSig;
                 dr["Marca Clase"] = marcaClase;
-                dr["Fo"] = frec;
+                dr["Fe"] = frec;
                 dr["P()"] = prob;
-                dr["Fe"] = fe;
+                dr["Fo"] = fe;
                 dr["Po"] = po;
                 dr["Pe"] = pe;
                 dr["PoAc"] = poAc;
@@ -175,7 +176,7 @@ namespace WindowsFormsApplication1
                     for (int i = 0; i < n; i++)
                     {
                         numeros[i] = Distribucion.generarUniforme(min, max);
-                        lst_distrib.Items.Add(numeros[i].ToString());
+                        lst_distrib.Items.Add(numeros[i].ToString("N4"));
                     }                            
                     break;
                 case (int) tipo_distribucion.Exponencial:
@@ -183,7 +184,7 @@ namespace WindowsFormsApplication1
                     for (int i = 0; i < n; i++)
                     {
                         numeros[i] = Distribucion.generarExponencial(media);
-                        lst_distrib.Items.Add(numeros[i].ToString());
+                        lst_distrib.Items.Add(numeros[i].ToString("N4"));
                     }                        
                     break;
                 case (int) tipo_distribucion.Poisson:
@@ -191,7 +192,7 @@ namespace WindowsFormsApplication1
                     for (int i = 0; i < n; i++)
                     {
                         numeros[i] = Distribucion.generarPoisson(media);
-                        lst_distrib.Items.Add(numeros[i].ToString());
+                        lst_distrib.Items.Add(numeros[i].ToString("N4"));
                     }                        
                     break;
                 case (int) tipo_distribucion.Normal:
@@ -200,20 +201,12 @@ namespace WindowsFormsApplication1
                     for (int i = 0; i < n; i++)         //for (int i = 0; i < n/2; i++)----> por que divido 2 
                     {
                         numeros = Distribucion.generarNormal(n, media, desv);
-                        lst_distrib.Items.Add(numeros[i].ToString());
+                        lst_distrib.Items.Add(numeros[i].ToString("N4"));
                     }
                     break;
             }                            
 
-            ////Mostramos el arreglo con los numeros en pantalla
-            //for (int i = 0; i < numeros.Length; i++)
-            //{
-            //    DataRow dr = dt.NewRow();
-            //    dt.Rows.Add(numeros[i]);
-
-            //    lst_distrib.Items.Add(numeros[i].ToString());
-            //}
-            //dgv_numeros.DataSource = dt;
+           
             return numeros;
         }
         
@@ -224,10 +217,7 @@ namespace WindowsFormsApplication1
 
         private void txt_media_TextChanged(object sender, EventArgs e)
         {
-            //double media = calcularMedia();
-            //string mensaje = Convert.ToString(media);
-            ////enseguida se muestra en el textbox esta variable
-            //txt_media.Text = mensaje;
+            
         }
 
         public double calcularMedia()
@@ -254,11 +244,7 @@ namespace WindowsFormsApplication1
 
         private void txt_lambda_TextChanged(object sender, EventArgs e)
         {
-            //double lambda = calcularLambda();
-            //string mensaje = Convert.ToString(lambda);
-
-            ////enseguida se muestra en el textbox esta variable
-            //txt_media.Text = mensaje;
+            
         }
 
         private void cbo_distrib_SelectedIndexChanged(object sender, EventArgs e)
@@ -300,16 +286,12 @@ namespace WindowsFormsApplication1
             txt_desv.Text = "";
         }
 
-<<<<<<< HEAD
 
-
-
-=======
         private void txt_intervalos_TextChanged(object sender, EventArgs e)
         {
 
         }
->>>>>>> 57a43f8da640619110a7a6e95d1d1a9b2c9a0695
+
         
     }
 }
