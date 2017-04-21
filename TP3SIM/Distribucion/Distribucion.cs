@@ -17,13 +17,24 @@ namespace WindowsFormsApplication1
         // genera un valor aleatorio aplicando la distribucion uniforme
         public static double generarUniforme(double min, double max)
         {
-            return RND.NextDouble() * (max - min) + min;
+            return Math.Round(RND.NextDouble() * (max - min) + min, 4);
         }
 
         // genera un valor aleatorio aplicando la distribucion exponencial
-        public static double generarExponencial(double media)
+        public static double[] generarExponencial(double media, int n)
         {
-            return - media * Math.Log(1 - RND.NextDouble());
+            double[] v;
+            v = new double[n];
+
+            for (int i = 0; i < v.Length; i++)
+            {
+
+                v[i] = Math.Round(-media * Math.Log(1 - RND.NextDouble()), 4);
+
+            }
+
+            return v;
+
         }
 
         // genera dos valores aleatorios aplicando la distribucion normal
@@ -68,17 +79,44 @@ namespace WindowsFormsApplication1
         }
 
         // genera un valor aleatorio aplicando la distribucion Poisson
-        public static double generarPoisson(double media)
+
+
+
+        public static double[] generarPoisson(double media, int n)
         {
+            double[] v;
+            v = new double[n];
+
             double p = 1;
-            double x = -1;
-            do
+            double x = 0;
+            double u = 0;
+
+            double a = Math.Exp(-media);
+
+            for (int i = 0; i < v.Length; i++)
             {
-                p = p * RND.NextDouble();
-                x++;
-            } while (p >= Math.Exp(media));
-            return x;
+                p = 1;
+                x = 0;
+                do
+                {
+                    u = RND.NextDouble();
+                    p = p * u;
+
+                    x++;
+                } while (p >= a);
+
+                v[i] = x;
+
+
+            }
+            return v;
         }
-     
+
+
+
+
+
+
+
     }
 }
