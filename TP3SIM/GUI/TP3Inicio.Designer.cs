@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series Frecuencia = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TP3));
             this.btn_generar = new System.Windows.Forms.Button();
             this.lbl_media = new System.Windows.Forms.Label();
@@ -55,11 +55,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.chrt_histograma = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rb_20 = new System.Windows.Forms.RadioButton();
+            this.rb_10 = new System.Windows.Forms.RadioButton();
+            this.rb_5 = new System.Windows.Forms.RadioButton();
             this.txt_confianza = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.rb_5 = new System.Windows.Forms.RadioButton();
-            this.rb_10 = new System.Windows.Forms.RadioButton();
-            this.rb_20 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_frec)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chrt_histograma)).BeginInit();
@@ -269,6 +269,7 @@
             this.lbl_resultadoPrueba.Size = new System.Drawing.Size(1220, 21);
             this.lbl_resultadoPrueba.TabIndex = 8;
             this.lbl_resultadoPrueba.Text = "lbl_resultadoPrueba";
+            this.lbl_resultadoPrueba.Click += new System.EventHandler(this.lbl_resultadoPrueba_Click);
             // 
             // label3
             // 
@@ -289,10 +290,10 @@
             this.chrt_histograma.Legends.Add(legend1);
             this.chrt_histograma.Location = new System.Drawing.Point(683, 12);
             this.chrt_histograma.Name = "chrt_histograma";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chrt_histograma.Series.Add(series1);
+            Frecuencia.ChartArea = "ChartArea1";
+            Frecuencia.Legend = "Legend1";
+            Frecuencia.Name = "Frecuencia";
+            this.chrt_histograma.Series.Add(Frecuencia);
             this.chrt_histograma.Size = new System.Drawing.Size(552, 277);
             this.chrt_histograma.TabIndex = 6;
             this.chrt_histograma.Text = "chart1";
@@ -313,6 +314,39 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Gráfico y Prueba de K-S";
             // 
+            // rb_20
+            // 
+            this.rb_20.AutoSize = true;
+            this.rb_20.Location = new System.Drawing.Point(98, 123);
+            this.rb_20.Name = "rb_20";
+            this.rb_20.Size = new System.Drawing.Size(40, 21);
+            this.rb_20.TabIndex = 6;
+            this.rb_20.TabStop = true;
+            this.rb_20.Text = "20";
+            this.rb_20.UseVisualStyleBackColor = true;
+            // 
+            // rb_10
+            // 
+            this.rb_10.AutoSize = true;
+            this.rb_10.Location = new System.Drawing.Point(98, 96);
+            this.rb_10.Name = "rb_10";
+            this.rb_10.Size = new System.Drawing.Size(40, 21);
+            this.rb_10.TabIndex = 5;
+            this.rb_10.TabStop = true;
+            this.rb_10.Text = "10";
+            this.rb_10.UseVisualStyleBackColor = true;
+            // 
+            // rb_5
+            // 
+            this.rb_5.AutoSize = true;
+            this.rb_5.Location = new System.Drawing.Point(98, 69);
+            this.rb_5.Name = "rb_5";
+            this.rb_5.Size = new System.Drawing.Size(33, 21);
+            this.rb_5.TabIndex = 4;
+            this.rb_5.TabStop = true;
+            this.rb_5.Text = "5";
+            this.rb_5.UseVisualStyleBackColor = true;
+            // 
             // txt_confianza
             // 
             this.txt_confianza.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -331,39 +365,6 @@
             this.label4.Size = new System.Drawing.Size(115, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Nivel de confianza";
-            // 
-            // rb_5
-            // 
-            this.rb_5.AutoSize = true;
-            this.rb_5.Location = new System.Drawing.Point(98, 69);
-            this.rb_5.Name = "rb_5";
-            this.rb_5.Size = new System.Drawing.Size(33, 21);
-            this.rb_5.TabIndex = 4;
-            this.rb_5.TabStop = true;
-            this.rb_5.Text = "5";
-            this.rb_5.UseVisualStyleBackColor = true;
-            // 
-            // rb_10
-            // 
-            this.rb_10.AutoSize = true;
-            this.rb_10.Location = new System.Drawing.Point(98, 96);
-            this.rb_10.Name = "rb_10";
-            this.rb_10.Size = new System.Drawing.Size(40, 21);
-            this.rb_10.TabIndex = 5;
-            this.rb_10.TabStop = true;
-            this.rb_10.Text = "10";
-            this.rb_10.UseVisualStyleBackColor = true;
-            // 
-            // rb_20
-            // 
-            this.rb_20.AutoSize = true;
-            this.rb_20.Location = new System.Drawing.Point(98, 123);
-            this.rb_20.Name = "rb_20";
-            this.rb_20.Size = new System.Drawing.Size(40, 21);
-            this.rb_20.TabIndex = 6;
-            this.rb_20.TabStop = true;
-            this.rb_20.Text = "20";
-            this.rb_20.UseVisualStyleBackColor = true;
             // 
             // TP3
             // 

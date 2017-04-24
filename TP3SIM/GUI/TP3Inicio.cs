@@ -44,7 +44,7 @@ namespace WindowsFormsApplication1
 
             dgv_frec.DataSource = null;
             dgv_frec.Refresh();
-            chrt_histograma.Series["Series1"].Points.Clear(); //limpio grafico
+            chrt_histograma.Series["Frecuencia"].Points.Clear(); //limpio grafico
             lst_distrib.Items.Clear(); // limpio bloc
 
             // paso generar valores
@@ -181,7 +181,7 @@ namespace WindowsFormsApplication1
 
                 double grafico = Math.Round((j + (cteIntervalo / 2)), 4);
 
-                chrt_histograma.Series["Series1"].Points.AddXY(grafico, frec);
+                chrt_histograma.Series["Frecuencia"].Points.AddXY(grafico, frec);
 
 
                 // agus
@@ -298,7 +298,7 @@ namespace WindowsFormsApplication1
 
                 //chart1.Titles.Add("Frecuencia Observada");
 
-                chrt_histograma.Series["Series1"].Points.AddXY((j + (cteIntervalo / 2)), frec);
+                chrt_histograma.Series["Frecuencia"].Points.AddXY((j + (cteIntervalo / 2)), frec);
 
                 // agus
 
@@ -339,7 +339,7 @@ namespace WindowsFormsApplication1
             // limpieza tablas
             dgv_frec.DataSource = null;
             dgv_frec.Refresh();
-            chrt_histograma.Series["Series1"].Points.Clear(); //limpio grafico
+            chrt_histograma.Series["Frecuencia"].Points.Clear(); //limpio grafico
             lst_distrib.Items.Clear(); // limpio bloc
 
             numeros = null;
@@ -440,7 +440,7 @@ namespace WindowsFormsApplication1
             lbl_resultadoPrueba.Text = "";
             dgv_frec.DataSource = null;
             dgv_frec.Refresh();
-            chrt_histograma.Series["Series1"].Points.Clear(); //limpio grafico
+            chrt_histograma.Series["Frecuencia"].Points.Clear(); //limpio grafico
             lst_distrib.Items.Clear(); // limpio bloc
             //
 
@@ -583,7 +583,7 @@ namespace WindowsFormsApplication1
 
                 //chart1.Titles.Add("Frecuencia Observada");
 
-                chrt_histograma.Series["Series1"].Points.AddXY((j + (cteIntervalo / 2)), frec);
+                chrt_histograma.Series["Frecuencia"].Points.AddXY((j + (cteIntervalo / 2)), frec);
 
                 // agus
 
@@ -651,8 +651,8 @@ namespace WindowsFormsApplication1
                 rb_5.Enabled = false;
             }
 
-            double min = numeros[0];
-            double max = numeros[0];
+            int min = Convert.ToInt32(numeros[0]);
+            int max = Convert.ToInt32(numeros[0]);
             double intSig = 0;
             int frec = 0;
             double marcaClase = 0;
@@ -672,15 +672,15 @@ namespace WindowsFormsApplication1
             {
                 if (numeros[i] > max)
                 {
-                    max = numeros[i];
+                    max = Convert.ToInt32(numeros[i]);
                 }
                 if (numeros[i] < min)
                 {
-                    min = numeros[i];
+                    min = Convert.ToInt32(numeros[i]);
                 }
             }
 
-            double cteIntervalo = max / intervalos;
+            int cteIntervalo = max / intervalos;
             for (j = min; j < max; j = j + cteIntervalo)
             {
                 intSig = j + cteIntervalo;
@@ -714,7 +714,7 @@ namespace WindowsFormsApplication1
 
                 //chart1.Titles.Add("Frecuencia Observada");
 
-                chrt_histograma.Series["Series1"].Points.AddXY((j + (cteIntervalo / 2)), frec);
+                chrt_histograma.Series["Frecuencia"].Points.AddXY((j + (cteIntervalo / 2)), frec);
 
                 // agus
 
@@ -773,7 +773,7 @@ namespace WindowsFormsApplication1
 
             lbl_resultadoPrueba.Text = "Para un nivel de confianza " +
 
-            txt_confianza.Text + " (" + valor + "), y el máximo valor obtenido de la prueba " + mayor + ", entonces";
+            txt_confianza.Text + " (" + valor + "), y el máximo valor obtenido de la prueba " + mayor + ", obtenemos entonces como conclusión que";
 
             if (valor > mayor)
             {
@@ -822,6 +822,11 @@ namespace WindowsFormsApplication1
         }
 
         private void txt_numeros_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_resultadoPrueba_Click(object sender, EventArgs e)
         {
 
         }
