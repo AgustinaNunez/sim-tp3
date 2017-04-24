@@ -522,8 +522,8 @@ namespace WindowsFormsApplication1
                 rb_5.Enabled = false;
             }
 
-            double min = numeros[0];
-            double max = numeros[0];
+            int min = Convert.ToInt32(numeros[0]);
+            double max = Convert.ToInt32(numeros[0]);
             double intSig = 0;
             int frec = 0;
             double marcaClase = 0;
@@ -543,15 +543,15 @@ namespace WindowsFormsApplication1
             {
                 if (numeros[i] > max)
                 {
-                    max = numeros[i];
+                    max = Convert.ToInt32(numeros[i]);
                 }
                 if (numeros[i] < min)
                 {
-                    min = numeros[i];
+                    min = Convert.ToInt32(numeros[i]);
                 }
             }
 
-            double cteIntervalo = max / intervalos;
+            int cteIntervalo = Convert.ToInt32(max / intervalos);
             for (j = min; j < max; j = j + cteIntervalo)
             {
                 intSig = j + cteIntervalo;
