@@ -122,8 +122,8 @@ namespace WindowsFormsApplication1
 
             }
 
-            double min = numeros[0];
-            double max = numeros[0];
+            int min = Convert.ToInt32(numeros[0]);
+            int max = Convert.ToInt32(numeros[0]);
             double intSig = 0;
             double frec = 0;
             double marcaClase = 0;
@@ -141,15 +141,15 @@ namespace WindowsFormsApplication1
             {
                 if (numeros[i] > max)
                 {
-                    max = numeros[i];
+                    max = Convert.ToInt32(numeros[i]);
                 }
                 if (numeros[i] < min)
                 {
-                    min = numeros[i];
+                    min = Convert.ToInt32(numeros[i]);
                 }
             }
 
-            double cteIntervalo = (max - min) / intervalos;
+            int cteIntervalo = (max - min) / intervalos;
             for (j = min; j < max; j = j + cteIntervalo)
             {
                 intSig = j + cteIntervalo;
@@ -186,8 +186,8 @@ namespace WindowsFormsApplication1
 
                 // agus
                 DataRow dr = dt.NewRow();
-                dr["Mín"] = Math.Round(j, 4);
-                dr["Máx"] = Math.Round(intSig, 4);
+                dr["Mín"] = j;
+                dr["Máx"] = intSig;
                 dr["Marca Clase"] = Math.Round(marcaClase, 4);
                 dr["Fe"] = Math.Round(fe, 4);
                 dr["Fo"] = Math.Round(frec, 4);
@@ -240,8 +240,8 @@ namespace WindowsFormsApplication1
 
             }
 
-            double min = numeros[0];
-            double max = numeros[0];
+            int min = Convert.ToInt32(numeros[0]);
+            int max = Convert.ToInt32(numeros[0]);
             double intSig = 0;
             int frec = 0;
             double marcaClase = 0;
@@ -260,15 +260,15 @@ namespace WindowsFormsApplication1
             {
                 if (numeros[i] > max)
                 {
-                    max = numeros[i];
+                    max = Convert.ToInt32(numeros[i]);
                 }
                 if (numeros[i] < min)
                 {
-                    min = numeros[i];
+                    min = Convert.ToInt32(numeros[i]);
                 }
             }
 
-            double cteIntervalo = (max - min) / intervalos;
+            int cteIntervalo = (max - min) / intervalos;
             j = 0;
             for (j = min; j < max; j = j + cteIntervalo)
             {
@@ -303,8 +303,8 @@ namespace WindowsFormsApplication1
                 // agus
 
                 DataRow dr = dt.NewRow();
-                dr["Mín"] = Math.Round(j, 4);
-                dr["Máx"] = Math.Round(intSig, 4);
+                dr["Mín"] = j;
+                dr["Máx"] = intSig;
                 dr["Marca Clase"] = Math.Round(marcaClase, 4);
                 dr["Fo"] = frec;
                 dr["P()"] = Math.Round(prob, 4);
