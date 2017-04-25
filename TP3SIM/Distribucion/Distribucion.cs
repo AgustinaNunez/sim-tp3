@@ -82,7 +82,7 @@ namespace WindowsFormsApplication1
 
 
 
-        public static double[] generarPoisson(double media, int n)
+        public static double[] generarPoisson(double lambda, int n)
         {
             double[] v;
             v = new double[n];
@@ -91,7 +91,7 @@ namespace WindowsFormsApplication1
             double x = 0;
             double u = 0;
 
-            double a = Math.Exp(-media);
+            double a = Math.Exp(-lambda);
 
             for (int i = 0; i < v.Length; i++)
             {

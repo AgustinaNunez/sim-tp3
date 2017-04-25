@@ -72,3 +72,12 @@ C:\Users\Javier\Source\Repos\sim-tp3--local3\TP3SIM\obj\Debug\WindowsFormsApplic
 C:\Users\Javier\Source\Repos\sim-tp3--local3\TP3SIM\obj\Debug\TP3SIM.csproj.GenerateResource.Cache
 C:\Users\Javier\Source\Repos\sim-tp3--local3\TP3SIM\obj\Debug\TP3SIM.exe
 C:\Users\Javier\Source\Repos\sim-tp3--local3\TP3SIM\obj\Debug\TP3SIM.pdb
+F:\PASAR netbook\facu\SIM\2017\TP3\Nueva carpeta\Nueva carpeta\sim-tp3-master\TP3SIM\bin\Debug\TP3SIM.exe.config
+F:\PASAR netbook\facu\SIM\2017\TP3\Nueva carpeta\Nueva carpeta\sim-tp3-master\TP3SIM\obj\Debug\TP3SIM.exe
+F:\PASAR netbook\facu\SIM\2017\TP3\Nueva carpeta\Nueva carpeta\sim-tp3-master\TP3SIM\obj\Debug\TP3SIM.pdb
+F:\PASAR netbook\facu\SIM\2017\TP3\Nueva carpeta\Nueva carpeta\sim-tp3-master\TP3SIM\bin\Debug\TP3SIM.exe
+F:\PASAR netbook\facu\SIM\2017\TP3\Nueva carpeta\Nueva carpeta\sim-tp3-master\TP3SIM\bin\Debug\TP3SIM.pdb
+F:\PASAR netbook\facu\SIM\2017\TP3\Nueva carpeta\Nueva carpeta\sim-tp3-master\TP3SIM\obj\Debug\TP3SIM.csprojResolveAssemblyReference.cache
+F:\PASAR netbook\facu\SIM\2017\TP3\Nueva carpeta\Nueva carpeta\sim-tp3-master\TP3SIM\obj\Debug\WindowsFormsApplication1.TP3.resources
+F:\PASAR netbook\facu\SIM\2017\TP3\Nueva carpeta\Nueva carpeta\sim-tp3-master\TP3SIM\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+F:\PASAR netbook\facu\SIM\2017\TP3\Nueva carpeta\Nueva carpeta\sim-tp3-master\TP3SIM\obj\Debug\TP3SIM.csproj.GenerateResource.Cache
