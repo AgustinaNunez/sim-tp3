@@ -11,7 +11,7 @@ namespace WindowsFormsApplication1
         private static int n;
         private static double[] vRND, vGen;
         private static Random RND = new Random();
-        private static Random rnd, r1, r2;
+        private static Random rnd, r1 = new Random(), r2 = new Random();
         private static double pi, variable, z;
 
         // genera un valor aleatorio aplicando la distribucion uniforme
@@ -41,8 +41,7 @@ namespace WindowsFormsApplication1
         public static double[] generarNormal(int n, double media, double desviacion)
         {
             pi = Math.PI;
-            r1 = new Random();
-            r2 = new Random();
+
 
 
             double[] v;
@@ -53,8 +52,11 @@ namespace WindowsFormsApplication1
             {
 
 
-                double aux1 = r1.NextDouble() * 1;
-                double aux2 = r2.NextDouble() * 1;
+                //double aux1 = r1.NextDouble() * 1;
+                //double aux2 = r2.NextDouble() * 1;
+                double aux1 = r1.NextDouble();
+                double aux2 = r2.NextDouble();
+
 
 
 
@@ -67,7 +69,17 @@ namespace WindowsFormsApplication1
 
 
 
+
+
                 v[i] = Math.Round(variable, 4);
+
+
+
+
+
+
+
+
 
 
 
@@ -77,6 +89,39 @@ namespace WindowsFormsApplication1
 
             return v;
         }
+
+        public static double[] generarNor(int n, double media, double desviacion)
+        {
+
+
+
+
+            double[] v;
+            v = new double[n];
+
+
+            for (int i = 0; i < v.Length; i++)
+            {
+                double t = 0;
+                for (int j = 0; j < 12; j++)
+                {
+
+                    t += r1.NextDouble();
+
+                }
+                t = (t - 6);
+                t = t * desviacion + media;
+                v[i] = Math.Round(t, 4);
+
+
+            }
+
+            return v;
+        }
+
+
+
+
 
         // genera un valor aleatorio aplicando la distribucion Poisson
 

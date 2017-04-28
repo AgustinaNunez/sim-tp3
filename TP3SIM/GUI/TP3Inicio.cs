@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
         int n;
         double[] numeros;
         DataTable dt;
-       double intervalos;
+        double intervalos;
         double prob = 0;
         public TP3()
         {
@@ -85,9 +85,9 @@ namespace WindowsFormsApplication1
 
         public void generar_tabla_distribucion_Uniforme()
         {
-           
-           
-           
+
+
+
 
             DataTable dt = new DataTable();
             dt.Columns.Add("numero");
@@ -180,11 +180,11 @@ namespace WindowsFormsApplication1
 
 
                 double grafico = Math.Round((j + (cteIntervalo / 2)), 4);
-               // double grafico = Math.Round((j + intSig / 2), 4);
+                // double grafico = Math.Round((j + intSig / 2), 4);
 
 
-                
-                
+
+
 
                 chrt_histograma.Series["Frecuencia"].Points.AddXY(grafico, frec);
 
@@ -217,9 +217,9 @@ namespace WindowsFormsApplication1
 
         public void generar_tablasNormal()
         {
-           
-           
-                
+
+
+
 
             DataTable dt = new DataTable();
             dt.Columns.Add("numero");
@@ -251,8 +251,8 @@ namespace WindowsFormsApplication1
 
             }
 
-            int min = Convert.ToInt32(numeros[0]);
-            int max = Convert.ToInt32(numeros[0]);
+            double min = numeros[0];
+            double max = numeros[0];
             double intSig = 0;
             int frec = 0;
             double marcaClase = 0;
@@ -272,13 +272,14 @@ namespace WindowsFormsApplication1
             {
                 if (numeros[i] > max)
                 {
-                    max = Convert.ToInt32(numeros[i]);
+                    max = numeros[i];
                 }
                 if (numeros[i] < min)
                 {
-                    min = Convert.ToInt32(numeros[i]);
+                    min = numeros[i];
                 }
             }
+
 
             double cteIntervalo = (max - min) / intervalos;
             j = 0;
@@ -286,8 +287,9 @@ namespace WindowsFormsApplication1
             {
                 intSig = j + cteIntervalo;
                 numero = numero + 1;
-               
-                marcaClase = (intSig + j) / 2;
+
+                //marcaClase = (intSig + j) / 2;
+                marcaClase = ((j + (intSig / 2)));
                 for (int i = 0; i < n; i++)
                 {
                     if (numeros[i] >= j && numeros[i] < intSig)
@@ -312,11 +314,13 @@ namespace WindowsFormsApplication1
 
                 //chart1.Titles.Add("Frecuencia Observada");
 
-               
-                chrt_histograma.Series["Frecuencia"].Points.AddXY((j + (cteIntervalo / 2)), frec);
-                //chrt_histograma.Series["Frecuencia"].Points.AddXY((j + intSig / 2), frec);
 
-                // agus
+                chrt_histograma.Series["Frecuencia"].Points.AddXY((j + (cteIntervalo / 2)), frec);
+
+
+
+
+
 
                 DataRow dr = dt.NewRow();
                 dr["numero"] = numero;
@@ -407,7 +411,7 @@ namespace WindowsFormsApplication1
                 case (int)tipo_distribucion.Normal:
                     media = Convert.ToDouble(txt_media.Text);
                     desv = Convert.ToDouble(txt_desv.Text);
-                    numeros = Distribucion.generarNormal(n, media, desv);
+                    numeros = Distribucion.generarNor(n, media, desv);
                     for (int i = 0; i < n; i++)
                     {
                         // numeros = Distribucion.generarNormal(n, media, desv) // muy eneficiente 
@@ -473,7 +477,7 @@ namespace WindowsFormsApplication1
                     txt_max.Enabled = true;
                     txt_media.Enabled = false;
                     txt_desv.Enabled = false;
-                    txt_lambda.Enabled = false; 
+                    txt_lambda.Enabled = false;
                     break;
                 case 1:
                     distribucion_seleccionada = (int)tipo_distribucion.Normal;
@@ -481,7 +485,7 @@ namespace WindowsFormsApplication1
                     txt_max.Enabled = false;
                     txt_media.Enabled = true;
                     txt_desv.Enabled = true;
-                    txt_lambda.Enabled = false; 
+                    txt_lambda.Enabled = false;
                     break;
                 case 2:
                     distribucion_seleccionada = (int)tipo_distribucion.Exponencial;
@@ -489,7 +493,7 @@ namespace WindowsFormsApplication1
                     txt_max.Enabled = false;
                     txt_media.Enabled = true;
                     txt_desv.Enabled = false;
-                    txt_lambda.Enabled = false; 
+                    txt_lambda.Enabled = false;
                     break;
                 case 3:
                     distribucion_seleccionada = (int)tipo_distribucion.Poisson;
@@ -497,7 +501,7 @@ namespace WindowsFormsApplication1
                     txt_max.Enabled = false;
                     txt_media.Enabled = false;
                     txt_desv.Enabled = false;
-                    txt_lambda.Enabled = true; 
+                    txt_lambda.Enabled = true;
                     break;
             }
             txt_min.Text = "";
@@ -512,7 +516,7 @@ namespace WindowsFormsApplication1
         {
             double media = Convert.ToDouble(txt_media.Text);
 
-            
+
 
             DataTable dt = new DataTable();
             dt.Columns.Add("numero");
@@ -531,17 +535,17 @@ namespace WindowsFormsApplication1
             if (rb_5.Checked)
             {
                 intervalos = 5;
-              
+
             }
             else if (rb_10.Checked)
             {
                 intervalos = 10;
-               
+
             }
             else
             {
                 intervalos = 20;
-              
+
             }
 
             int min = Convert.ToInt32(numeros[0]);
@@ -610,7 +614,7 @@ namespace WindowsFormsApplication1
                 chrt_histograma.Series["Frecuencia"].Points.AddXY((j + (cteIntervalo / 2)), frec);
                 //chrt_histograma.Series["Frecuencia"].Points.AddXY((j + intSig / 2), frec);
 
-               
+
 
                 DataRow dr = dt.NewRow();
                 dr["numero"] = numero;
@@ -643,7 +647,7 @@ namespace WindowsFormsApplication1
 
         public void generar_tablasPoisson()
         {
-          
+
 
             DataTable dt = new DataTable();
             dt.Columns.Add("numero");
@@ -662,17 +666,17 @@ namespace WindowsFormsApplication1
             if (rb_5.Checked)
             {
                 intervalos = 5;
-               
+
             }
             else if (rb_10.Checked)
             {
                 intervalos = 10;
-                
+
             }
             else
             {
                 intervalos = 20;
-               
+
             }
 
             int min = Convert.ToInt32(numeros[0]);
@@ -682,7 +686,7 @@ namespace WindowsFormsApplication1
             double marcaClase = 0;
             double j = 0;
 
-            double lambdaPoisson =  Convert.ToDouble(txt_lambda.Text);
+            double lambdaPoisson = Convert.ToDouble(txt_lambda.Text);
 
             double fe = 0;
             double po = 0;
@@ -705,14 +709,14 @@ namespace WindowsFormsApplication1
                 }
             }
 
-            
+
 
             double cteIntervalo = max / intervalos;  // ancho intervalo
             //MessageBox.Show("ancho" + cteIntervalo);
-            for (j = 0; j < max; j = j + cteIntervalo)    
+            for (j = 0; j < max; j = j + cteIntervalo)
             {
                 numero = numero + 1;
-                
+
                 intSig = j + cteIntervalo;
                 marcaClase = (intSig + j) / 2;
                 for (int i = 0; i < n; i++)
@@ -730,7 +734,7 @@ namespace WindowsFormsApplication1
 
                 prob = ((Math.Pow(lambdaPoisson, j)) * Math.Exp(-lambdaPoisson)) / factorial(j);
 
-                
+
 
 
                 fe = prob * (double)n;
@@ -746,7 +750,7 @@ namespace WindowsFormsApplication1
                 chrt_histograma.Series["Frecuencia"].Points.AddXY((j + (cteIntervalo / 2)), frec);
                 //chrt_histograma.Series["Frecuencia"].Points.AddXY((j + intSig / 2), frec);
 
-               
+
 
                 DataRow dr = dt.NewRow();
 
