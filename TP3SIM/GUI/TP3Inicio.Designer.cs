@@ -40,6 +40,8 @@
             this.lbl_lambda = new System.Windows.Forms.Label();
             this.txt_desv = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_lambda = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txt_min = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_max = new System.Windows.Forms.TextBox();
@@ -60,8 +62,6 @@
             this.rb_5 = new System.Windows.Forms.RadioButton();
             this.txt_confianza = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txt_lambda = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_frec)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chrt_histograma)).BeginInit();
@@ -84,7 +84,7 @@
             // 
             this.lbl_media.AutoSize = true;
             this.lbl_media.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_media.Location = new System.Drawing.Point(13, 84);
+            this.lbl_media.Location = new System.Drawing.Point(27, 86);
             this.lbl_media.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_media.Name = "lbl_media";
             this.lbl_media.Size = new System.Drawing.Size(58, 17);
@@ -106,7 +106,7 @@
             // 
             this.lbl_lambda.AutoSize = true;
             this.lbl_lambda.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_lambda.Location = new System.Drawing.Point(7, 123);
+            this.lbl_lambda.Location = new System.Drawing.Point(2, 119);
             this.lbl_lambda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_lambda.Name = "lbl_lambda";
             this.lbl_lambda.Size = new System.Drawing.Size(83, 17);
@@ -144,6 +144,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parámetros";
             // 
+            // txt_lambda
+            // 
+            this.txt_lambda.Enabled = false;
+            this.txt_lambda.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_lambda.Location = new System.Drawing.Point(93, 149);
+            this.txt_lambda.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_lambda.Name = "txt_lambda";
+            this.txt_lambda.Size = new System.Drawing.Size(129, 25);
+            this.txt_lambda.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(17, 152);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 17);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Lambda =";
+            // 
             // txt_min
             // 
             this.txt_min.Enabled = false;
@@ -158,7 +179,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 21);
+            this.label1.Location = new System.Drawing.Point(20, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 17);
@@ -179,7 +200,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 53);
+            this.label2.Location = new System.Drawing.Point(17, 53);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 17);
@@ -369,27 +390,6 @@
             this.label4.Size = new System.Drawing.Size(115, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Nivel de confianza";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(7, 159);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 17);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Lambda =";
-            // 
-            // txt_lambda
-            // 
-            this.txt_lambda.Enabled = false;
-            this.txt_lambda.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_lambda.Location = new System.Drawing.Point(98, 156);
-            this.txt_lambda.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_lambda.Name = "txt_lambda";
-            this.txt_lambda.Size = new System.Drawing.Size(129, 25);
-            this.txt_lambda.TabIndex = 9;
             // 
             // TP3
             // 
