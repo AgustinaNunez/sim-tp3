@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
             txt_confianza.Text = confianza.ToString();
             txt_confianza.Enabled = false;
             txt_n.Text = "1000";
-            rb_5.Select();
+            rb_10.Select();
         }
 
 
@@ -180,6 +180,14 @@ namespace WindowsFormsApplication1
 
         public void generar_tablasNormal()
         {
+
+
+            double media, desv;
+
+            media = Convert.ToDouble(txt_media.Text);
+            desv = Convert.ToDouble(txt_desv.Text);
+
+
             DataTable dt = new DataTable();
             dt.Columns.Add("numero");
             dt.Columns.Add("Mín");
@@ -197,14 +205,17 @@ namespace WindowsFormsApplication1
             if (rb_5.Checked)
             {
                 intervalos = 5;
+
             }
             else if (rb_10.Checked)
             {
                 intervalos = 10;
+
             }
             else
             {
                 intervalos = 20;
+
             }
 
             double min = numeros[0];
@@ -213,6 +224,7 @@ namespace WindowsFormsApplication1
             int frec = 0;
             double marcaClase = 0;
             double j = 0;
+
 
             double fe = 0;
             double po = 0;
@@ -235,6 +247,7 @@ namespace WindowsFormsApplication1
                 }
             }
 
+
             double cteIntervalo = (max - min) / intervalos;
             j = 0;
             for (j = min; j < max; j = j + cteIntervalo)
@@ -243,15 +256,22 @@ namespace WindowsFormsApplication1
                 numero = numero + 1;
 
                 //marcaClase = (intSig + j) / 2;
-                marcaClase = ((j + (intSig / 2)));
+                marcaClase = ((j + (cteIntervalo / 2)));
+
                 for (int i = 0; i < n; i++)
                 {
                     if (numeros[i] >= j && numeros[i] < intSig)
                     {
                         frec = frec + 1;
+
                     }
                 }
+
+
                 prob = (1 / (1 * Math.Sqrt((2 * (Math.PI))))) * Math.Exp(-0.5 * (marcaClase * marcaClase));
+                // prob = ((1 / (desv * Math.Sqrt(2 * Math.PI))) * Math.Exp(-1 * 0.5 * Math.Pow((x - media) / desv, 2)));
+
+
 
                 fe = prob * (double)n;
                 po = (double)frec / (double)n;
@@ -261,8 +281,16 @@ namespace WindowsFormsApplication1
                 abs = poAc - peAc;
                 abs = Math.Abs(abs);
 
+
                 //chart1.Titles.Add("Frecuencia Observada");
+
+
                 chrt_histograma.Series["Frecuencia"].Points.AddXY((j + (cteIntervalo / 2)), frec);
+
+
+
+
+
 
                 DataRow dr = dt.NewRow();
                 dr["numero"] = numero;
@@ -278,10 +306,16 @@ namespace WindowsFormsApplication1
                 dr["PeAc"] = Math.Round(peAc, 4);
                 dr["PoAc-PeAc"] = Math.Round(abs, 4);
 
+
+
+
+
                 dt.Rows.Add(dr);
+
                 frec = 0;
                 prob = 0;
             }
+
             dgv_frec.DataSource = dt;
         }
 
@@ -335,6 +369,8 @@ namespace WindowsFormsApplication1
                     }
                     break;
                 case (int)tipo_distribucion.Normal:
+                    if (n > 100001) { n = 85000; }
+                    
                     media = Convert.ToDouble(txt_media.Text);
                     desv = Convert.ToDouble(txt_desv.Text);
                     numeros = Distribucion.generarNor(n, media, desv);
